@@ -1,20 +1,49 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { StatusBar, SafeAreaView, StyleSheet, Text, View } from 'react-native';
+//Fontes
+import { useFonts, Inter_900Black, Inter_400Regular } from '@expo-google-fonts/inter';
+import { Bangers_400Regular  } from '@expo-google-fonts/bangers';
+
+//Componentes
+import Header from './components/header/header';
+import Menu from './components/menu/menu';
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+  const [fontCarregada] = useFonts({
+    "InterBold": Inter_900Black,
+    "InterRegular": Inter_400Regular,
+    "BangersRegular": Bangers_400Regular,
+  });
+
+  if(!fontCarregada){
+    return <View style={styles.container}>
+
     </View>
+  }
+
+  return (
+    <SafeAreaView>
+      <StatusBar />
+      <View style={styles.container}>
+        <Header />
+        <View style={styles.content}>
+          <Text>Teste</Text>
+        </View>
+        <Menu />
+      </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    height: "100%",
+    backgroundColor: '#1c1c1c',
+    color: '#4e0191',
+    alignContent: "center",
   },
+  content: {
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+  }
 });
