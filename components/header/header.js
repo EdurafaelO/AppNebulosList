@@ -1,16 +1,14 @@
 import React from "react";
 import { StyleSheet, Text, View, Image, Pressable } from 'react-native';
 
-//Images
-import UserIcon from '../../scr/images/icons/userIcon.png';
+//Comonentes
+import PopupUser from "../popupUser/popupUser";
 
 export default function Header(){
     return (
         <View style={estilos.container}>
             <Text style={estilos.textTitleHeader}>Nebulos List</Text>
-            <Pressable>
-                <Image source={UserIcon} style={estilos.imgUserIcon} />
-           </Pressable>
+            <PopupUser />
         </View>
     );
 }
@@ -30,8 +28,4 @@ const estilos = StyleSheet.create({
         fontSize: 30,
         paddingHorizontal: 20,
     },
-    imgUserIcon: {
-        width: 40,
-        height: 40,
-    }
 });
