@@ -40,7 +40,6 @@ const estilos = StyleSheet.create({
     buttonAddText: {
         color: "#9012ff",
         fontSize: 20,
-        fontWeight: "bold",
         fontFamily: "InterBold",
     },
     text:{

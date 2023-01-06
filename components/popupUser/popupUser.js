@@ -19,12 +19,12 @@ export default function PopupUser(){
                 transparent={true}
             >
                 <SafeAreaView style={estilos.safeAreaView} onTouchStart={()=>setModalVisible(false)}>
-                    <View style={estilos.box}>
+                    <View style={estilos.areaModal}>
                         <TouchableOpacity>
-                            <Text>Logar</Text>
+                            <Text style={estilos.textPopUp}>Logar</Text>
                         </TouchableOpacity>
                         <TouchableOpacity>
-                            <Text>Registrar</Text>
+                            <Text style={estilos.textPopUp}>Registrar</Text>
                         </TouchableOpacity>
                     </View>
                 </SafeAreaView>
@@ -40,13 +40,20 @@ const estilos = StyleSheet.create({
     },
     safeAreaView: {
         width: "100%",
-        height: "100%",
         alignItems: "flex-end",
     },
-    box:{
-        width: "75%",
-        height: "100%",
-        backgroundColor: "#ff0000",
-        marginTop: "22%"
+    areaModal:{
+        width: "auto",
+        marginTop: "22%",
+        backgroundColor: "#000",
+    },
+    textPopUp: {
+        color: "#9012ff",
+        fontSize: 25,
+        fontWeight: "bold",
+        fontFamily: "InterRegular",
+        textAlign: "right",
+        paddingHorizontal: 15,
+        paddingVertical: 5,
     },
 });
